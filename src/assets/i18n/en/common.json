@@ -1,0 +1,102 @@
+{
+  "common": {
+    "determined": {
+      "-1": "Tần suất"
+    },
+    "header": {
+      "title": "TOEIC ONLINE LEARNING SYSTEM",
+      "menu": {
+        "profile": "Account Information",
+        "changePass": "Change Password",
+        "logout": "Logout"
+      }
+    },
+    "title_notification": "Notification",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "0": "Locked",
+      "1": "Active",
+      "2": "Not verify"
+    },
+    "type": {
+      "0": "Admin",
+      "1": "Client"
+    },
+    "state": {
+      "0": "Đã được phê duyệt",
+      "1": "Đang đợi phê duyệt",
+      "2": "Từ chối phê duyệt"
+    },
+    "table": {
+      "status": "Status",
+      "item_number": "No",
+      "item_username": "Username",
+      "item_name": "Name",
+      "item_fullName": "Fullname",
+      "item_passwordHash": "Password",
+      "item_repassword": "Repassword",
+      "item_tel": "Phone Number",
+      "item_email": "Email",
+      "item_avatar": "Avatar",
+      "item_dateOfBirth": "DOB",
+      "item_role": "User role",
+      "item_status": "Status",
+      "item_link_status": "Trạng thái link",
+      "item_reasonForRefusal": "Lý do từ chối",
+      "item_news_users_name": "Tác giả",
+      "item_type": "Chức năng",
+      "item_imageUrl": "Đường dẫn ảnh",
+      "item_url": "Đường dẫn",
+      "item_action": "Act",
+      "item_detail": "Detail",
+      "item_roles_code": "Mã quyền",
+      "item_roles_name": "Tên quyền",
+      "item_map_popup": "Thao tác quyền với chức năng",
+      "item_update_time": "Updated date",
+      "item_description": "Mô tả",
+      "item_category_code": "Topic code",
+      "item_category_name": "Topic name",
+      "item_category_type": "Type of category",
+      "item_category": "Category name",
+      "item_question": "Question",
+      "item_answer_to_choose": "Answer to choose ",
+      "item_answer": "Answers",
+      "item_test_name": "Categories name",
+      "item_category_part_topic": "Part",
+      "item_category_part_name": "Topic name",
+      "item_objects_name": "Tên chức năng",
+      "item_objects_paren": "Chức năng cha",
+      "item_icon": "Icon",
+      "item_contact": "Contact",
+      "item_logs_name": "Tên tài khoản",
+      "item_log_ip": "Địa chỉ ip",
+      "item_log_table": "Bảng tác động",
+      "item_impact_time": "Create date",
+      "item_name_client": "Máy truy cập",
+      "address": "Địa chỉ"
+    },
+    "totalMessage": "records",
+    "search": "Search",
+    "placeHolder": "Select",
+    "notFoundText": "No records",
+    "record": "Records",
+    "selectedMessage": "bản ghi được chọn",
+    "clearAllText": "Delete",
+    "lock": "Lock",
+    "refuse": "Reject",
+    "approval": "Approve",
+    "save": "Save",
+    "add": "Add",
+    "highlights": "Highlight",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "view": "Details",
+    "copy": "Copy",
+    "delete": "Delete",
+    "come": "Back",
+    "kt": "End",
+    "format_date": "dd/MM/yyyy"
+  },
+  "close": "Đóng"
+}

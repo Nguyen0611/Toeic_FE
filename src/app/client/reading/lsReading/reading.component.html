@@ -1,0 +1,23 @@
+<!-- Title page -->
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="margin-top: 70px;background-image: url('/toeic-web/assets/images/img_study/about.jpeg');">
+  <h2 class="ltext-105 cl0 txt-center">
+    TOEIC topic
+  </h2>
+</section>
+<nb-card style="position: relative;     margin-top: 70px;" [nbSpinner]="loading" fullWidth style="min-height: 500px;">
+  <div class="container" style="    display: grid;
+    border: 1px solid black;">
+
+    <nb-card-header style="    padding: 20px;" class="card-header-title">List of exams
+    </nb-card-header>
+    <nb-card-body>
+      <div class="container">
+        <div>
+          <button style="margin: 15px;" *ngFor="let x of lisTopic" nbButton type="button" (click)="nextPage(x)"
+                  status="primary">{{x.name}}</button>
+        </div>
+      </div>
+    </nb-card-body>
+  </div>
+
+</nb-card>

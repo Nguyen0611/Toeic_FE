@@ -1,0 +1,47 @@
+{
+  "news": {
+    "approval" : "Phê duyệt tin tức",
+    "title": "Quản lý tin tức",
+    "insert_btn": "Thêm mới tin tức",
+    "title_add": "Thêm mới tin tức",
+    "title_edit": "Sửa thông tin tin tức",
+    "title_delete": "Xác nhận xóa tin tức",
+    "title_highlights": "Xác nhận đặt thành tin tức nổi bật",
+    "title_offHighlights": "Xác nhận huỷ trạng thái tin tức nổi bật",
+    "unknown_error": "Lỗi không xác định",
+    "content_add_success": "Thêm tin tức thành công",
+    "content_edit_success": "Sửa thông tin thành công",
+    "delete_success": "Xóa tin tức thành công",
+    "highlights_success": "Đặt tin tức nổi bật thành công",
+    "offHighlights_success": "Huỷ trạng thái tin tức nổi bật thành công"
+  },
+  "order": {
+    "title": "Quản lý bán hàng",
+    "title_add": "Thêm mới phiếu bán hàng",
+    "title_edit": "Sửa thông tin phiếu bán hàng",
+    "title_delete": "Xác nhận xóa phiếu bán hàng",
+    "unknown_error": "Lỗi không xác định",
+    "content_edit_success": "Sửa thông tin thành công",
+    "delete_success": "Xóa phiếu bán hàng thành công"
+  },
+  "image": {
+    "title": "Quản lý hình ảnh",
+    "title_lock": "Xác nhận khoá hình ảnh",
+    "unknown_error": "Lỗi không xác định",
+    "content_add_success": "Upload hình ảnh thành công",
+    "lock_success": "Khoá tin tức thành công",
+    "title_delete": "Xác nhận xóa tin tức",
+    "delete_success": "Xóa tin tức thành công"
+  },
+  "category": {
+    "title": "Quản lý Chủ đề",
+    "title_add": "Thêm mới Chủ đề",
+    "title_edit": "Sửa Chủ đề",
+    "title_delete": "Xác nhận xóa Chủ đề",
+    "content_add_success": "Thêm Chủ đề thành công",
+    "content_edit_success": "Sửa Chủ đề thành công",
+    "message_delete": "Bạn có chắc muốn xóa Chủ đề",
+    "delete_success": "Xóa Chủ đề thành công",
+    "title_map_popup": "Chủ đề"
+  }
+}

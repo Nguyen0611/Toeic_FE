@@ -1,0 +1,20 @@
+{
+  "login": {
+    "title": "Toeic online learning!",
+    "login": "Đăng nhập",
+    "changePass": "Đổi mật khẩu",
+    "confirmEmail": "Quên mật khẩu",
+    "remember": "Ghi nhớ mật khẩu",
+    "pass": "Mật khẩu",
+    "recaptchaReactive": "Mã Captcha",
+    "oldPass": "Mật khẩu cũ",
+    "newPass": "Mật khẩu mới",
+    "comPass": "Nhập lại mật khẩu",
+    "name": "Tên đăng nhập",
+    "email": "Nhập địa chỉ Email",
+    "emailC": "Email",
+    "sendEmail": "Gửi email",
+    "notification": "Thông báo",
+    "error": "Lỗi"
+  }
+}

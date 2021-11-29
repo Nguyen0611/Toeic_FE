@@ -1,0 +1,8 @@
+{
+  "roleAction": {
+    "insert": "create",
+    "update": "update",
+    "search": "search",
+    "delete": "delete"
+  }
+}

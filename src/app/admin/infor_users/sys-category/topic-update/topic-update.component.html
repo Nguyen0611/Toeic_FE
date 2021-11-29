@@ -1,0 +1,81 @@
+<nb-card style="position: relative" [nbSpinner]="loading" fullWidth>
+  <nb-card-header class="card-header-title">{{ title }}
+    <div class="bt-action">
+        <span>
+          <button ghost size="tiny" nbButton class="objLink float-right" (click)="ref.close()">
+            <nb-icon icon="close-outline"></nb-icon>
+          </button>
+        </span>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="inputUser">
+      <div class="mb-4">
+        <div class="row">
+          <div class="col-lg-12 form-group">
+            <div class="col-lg-12 form-group" style="display: flex">
+              <div class="col-lg-3">
+                <label class="label">
+                  {{ 'common.table.item_category_name' | translate }} <span style="color: red">(*)</span>
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <input [attr.disabled]="isDis" class="custom-border" formControlName="name" type="text" nbInput
+                       fullWidth
+                       trim="blur" placeholder="{{'common.table.item_category_name' |translate}}"
+                       [ngClass]="{'status-danger': this.inputUser.get('name').touched && this.inputUser.get('name').errors}">
+                <ngx-inline-message [message]="'common.table.item_category_name'|translate"
+                                    [formName]="inputUser.get('name')"></ngx-inline-message>
+              </div>
+            </div>
+            <div class="col-lg-12 form-group" style="display: flex">
+              <div class="col-lg-3">
+                <label class="label">
+                  {{ 'common.table.item_category_type' | translate }} <span style="color: red">(*)</span>
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <ng-select fullWidth appendTo="body"
+                           placeholder="{{'common.placeHolder' |translate}}"
+                           notFoundText="{{'common.notFoundText' |translate}}"
+                           clearAllText="{{'common.clearAllText' |translate}}"
+                           (change)="channeTyoe()"
+                           formControlName="idType">
+                  <ng-option *ngFor="let item of listTopic" [value]="item.id"> {{ item.name | translate }}
+                  </ng-option>
+                </ng-select>
+                <ngx-inline-message [message]="'common.table.item_category_type'|translate"
+                                    [formName]="inputUser.get('idType')"></ngx-inline-message>
+              </div>
+            </div>
+
+            <div class="col-lg-12 form-group" style="display: flex">
+              <div class="col-lg-3">
+                <label class="label">
+                  {{ 'common.table.item_category_part_topic' | translate }} <span style="color: red">(*)</span>
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <ng-select fullWidth appendTo="body"
+                           placeholder="{{'common.placeHolder' |translate}}"
+                           notFoundText="{{'common.notFoundText' |translate}}"
+                           clearAllText="{{'common.clearAllText' |translate}}"
+                           formControlName="idPartTopic">
+                  <ng-option *ngFor="let item of listPart" [value]="item.id"> {{ item.name | translate }}
+                  </ng-option>
+                </ng-select>
+                <ngx-inline-message [message]="'common.table.item_category_part_topic'|translate"
+                                    [formName]="inputUser.get('idPartTopic')"></ngx-inline-message>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer class="text-right">
+    <button nbButton [disabled]="inputUser.invalid" type="button" status="primary" (click)="submit()"
+            id="dialogCancelBtn">{{ 'common.save' | translate }}</button>
+    <button nbButton type="button" nbButton (click)="cancel()" class="ml-2"> {{ 'common.cancel' | translate }} </button>
+  </nb-card-footer>
+</nb-card>

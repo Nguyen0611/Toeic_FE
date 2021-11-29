@@ -1,0 +1,92 @@
+{
+  "common": {
+    "header": {
+      "title": "Hệ thống thông tin y tế",
+      "menu": {
+        "profile": "Quản lý tài khoản",
+        "changePass": "Đổi mật khẩu",
+        "logout": "Đăng xuất"
+      }
+    },
+    "title_notification": "Thông báo",
+    "status": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động",
+      "0": "Bị khóa",
+      "1": "Hoạt động"
+    },
+    "type": {
+      "0": "Admin",
+      "1": "Client"
+    },
+    "state": {
+      "0": "Đang bán",
+      "1": "Chuẩn bị mở bán",
+      "2": "Tạm thời hết hàng",
+      "3": "Ngừng kinh doanh"
+    },
+    "table": {
+      "item_number": "STT",
+      "item_username": "Tên đăng nhập",
+      "item_fullName": "Tên đầy đủ",
+      "item_passwordHash": "Mật khẩu",
+      "item_repassword": "Nhập lại mật khẩu",
+      "item_tel": "Số điện thoại",
+      "item_email": "Email",
+      "item_dateOfBirth": "Ngày sinh",
+      "item_role": "Quyền người dùng",
+      "item_status": "Trạng thái",
+      "item_type": "Chức năng",
+      "item_imageUrl": "Đường dẫn ảnh",
+      "item_url": "Đường dẫn",
+      "item_action": "Thao tác",
+      "item_roles_code": "Mã quyền",
+      "item_roles_name": "Tên quyền",
+      "item_map_popup": "Thao tác quyền với chức năng",
+      "item_update_time": "Ngày cập nhật",
+      "item_description": "Description",
+      "item_action_code": "Mã Action",
+      "item_action_name": "Tên Action",
+      "item_size_code": "Mã Size",
+      "item_size_name": "Tên Size",
+      "item_color_code": "Mã màu",
+      "item_color_name": "Tên màu",
+      "item_color_image": "Tên ảnh",
+      "item_objects_code": "Mã chức năng",
+      "item_objects_name": "Tên chức năng",
+      "item_objects_paren": "Chức năng cha",
+      "item_objects_popup": "Map action",
+      "item_icon": "Icon",
+      "item_product_code": "Mã sản phẩm",
+      "item_product_cost": "Giá sản phẩm",
+      "item_product_paren_object": "Danh mục",
+      "item_product_name": "Tên sản phẩm",
+      "item_product_total": "Tổng số lượng",
+      "item_product_size": "Kích thước",
+      "item_product_color": "Màu sắc",
+      "item_product_sl": "Số lượng",
+      "item_logs_name": "Tên tài khoản",
+      "item_log_ip": "Địa chỉ ip",
+      "item_log_table": "Bảng tác động",
+      "item_impact_time": "Ngày tác động",
+      "item_name_client": "Máy truy cập",
+      "item_size_color": "Map Size_Color ",
+      "item_image": "Map Ảnh ",
+      "title_map_common": "Map Thao tác ",
+      "item_image_link": "Hình ảnh"
+    },
+    "totalMessage": "bản ghi",
+    "search": "Tìm kiếm",
+    "placeHolder": "Lựa chọn",
+    "notFoundText": "Không có bản ghi",
+    "selectedMessage": "bản ghi được chọn",
+    "clearAllText": "Xóa",
+    "lock": "Khoá",
+    "save": "Lưu lại",
+    "add": "Thêm",
+    "cancel": "Huỷ bỏ",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "format_date": "dd/MM/yyyy"
+  }
+}

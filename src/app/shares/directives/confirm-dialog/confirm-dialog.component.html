@@ -1,0 +1,15 @@
+<nb-card>
+  <nb-card-header><h5>{{ title }}</h5></nb-card-header>
+  <nb-card-body>
+    <div>
+      <h6 style="font-weight: 400">{{message}}</h6>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <div class="text-right">
+      <button *ngIf="!hideCancel" nbButton type="button" status="warning" (click)="close()"
+              id="dialogCancelBtn">{{ cancelTitle }}</button>
+      <button  type="button" status="success" nbButton (click)="save()" class="ml-2">{{ okTitle }}</button>
+    </div>
+  </nb-card-footer>
+</nb-card>

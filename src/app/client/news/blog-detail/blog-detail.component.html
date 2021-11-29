@@ -1,0 +1,48 @@
+
+<!--================Blog Area =================-->
+<section style="    background: white;" class="blog_area single-post-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 posts-list">
+        <div class="single-post">
+          <h2>{{bodyNews.title}}
+          </h2>
+          <ul style="padding-top: 20px;" class="blog-info-link">
+            <li><p><i class="fa fa-user"></i> {{bodyNews.usersName}}</p></li>
+            <li style="display: contents;text-align: right;"><p><i
+              class="fa fa-date"></i> {{bodyNews.updateTime | date:'dd/MM/yyyy HH:mm:ss'}}</p></li>
+          </ul>
+          <div class="feature-img">
+            <img class="img-fluid" [src]="bodyNews.imageLink" alt="">
+          </div>
+          <div class="blog_details">
+            <div [innerHTML]="body"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="blog_right_sidebar">
+          <aside class="single_sidebar_widget search_widget">
+            <form action="#">
+              <div class="form-group">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder='Nhập nội dung cần tìm kiếm'
+                         onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                  <div class="input-group-append">
+                    <button class="btn" type="button"><i class="ti-search"></i></button>
+                  </div>
+                </div>
+              </div>
+              <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                      type="submit">Tìm kiếm</button>
+            </form>
+          </aside>
+          <ngx-list-category-client></ngx-list-category-client>
+          <ngx-recent-post-client></ngx-recent-post-client>
+          <ngx-news-letter-client></ngx-news-letter-client>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================ Blog Area end =================-->

@@ -1,0 +1,23 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()"><span>{{ 'common.header.title' | translate}}</span></a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <nb-user
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+    [onlyPicture]="false"
+    [name]="user.fullName"
+    (click)="openMenu = !openMenu"
+    [picture]="user?.pathUrl ? user?.pathUrl : 'https://www.w3schools.com/howto/img_avatar.png'">
+  </nb-user>
+  <div class="dropdown-content" style="min-width: 180px !important;">
+    <li (click)="viewUsers(null)">{{ 'common.header.menu.profile' | translate}}</li>
+    <li (click)="router.navigate(['auths/changePass'])">{{ 'common.header.menu.changePass' | translate}}</li>
+    <li (click)="logout()">{{ 'common.header.menu.logout' | translate}}</li>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<!-- bradcam_area_start  -->
+<!--<div class="bradcam_area breadcam_bg bradcam_overlay">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-xl-12">-->
+<!--        <div class="bradcam_text">-->
+<!--          <p><a style="cursor: pointer;" (click)="onClick()">Trang chủ /</a> Tin tức</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!-- bradcam_area_end  -->
+
+
+<!--================Blog Area =================-->
+<section style="    background: white;" class="blog_area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 style="padding: 30px 0px;">Tin tức</h3>
+      </div>
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <div class="blog_left_sidebar">
+          <div *ngFor="let key of arr" class="">
+            <article class="blog_item">
+              <div class="blog_item_img">
+                <img class="card-img rounded-0" [src]="key.imageLink" alt="">
+              </div>
+
+              <div class="blog_details">
+                <a class="d-inline-block" (click)="nextRouter(key)" >
+                  <h2 style="cursor: pointer;">{{key.title}}</h2>
+                </a>
+                <p>{{key.bodyChild}}</p>
+                <ul class="blog-info-link">
+                  <li><p><i class="fa fa-user"></i> {{key.usersName}}</p></li>
+                  <li style="display: contents;text-align: right;"><p><i
+                    class="fa fa-date"></i> {{key.updateTime | date:'dd/MM/yyyy HH:mm:ss'}}</p></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="blog_right_sidebar">
+          <aside class="single_sidebar_widget search_widget">
+            <form action="#">
+              <div class="form-group">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder='Search Keyword'
+                         onfocus="this.placeholder = ''"
+                         onblur="this.placeholder = 'Search Keyword'">
+                  <div class="input-group-append">
+                    <button class="btn" type="button"><i class="ti-search"></i></button>
+                  </div>
+                </div>
+              </div>
+              <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                      type="submit">Search
+              </button>
+            </form>
+          </aside>
+
+          <ngx-list-category-client></ngx-list-category-client>
+          <ngx-recent-post-client></ngx-recent-post-client>
+          <ngx-news-letter-client></ngx-news-letter-client>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================Blog Area =================-->

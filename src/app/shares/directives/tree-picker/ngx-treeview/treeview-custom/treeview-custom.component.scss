@@ -1,0 +1,22 @@
+label {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.bi {
+  cursor: pointer;
+  margin-right: 0.3rem;
+}
+.text {
+  //font-family: Open Sans, sans-serif;
+  font-size: 0.8125rem!important;
+  font-weight: 600!important;
+  line-height: 1.5rem!important;
+}
+.active {
+  background-color: #90b3ff;
+}
+.disable {
+  color: #b1b1b1;
+  //cursor: not-allowed;
+}

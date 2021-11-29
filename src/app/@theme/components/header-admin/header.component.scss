@@ -1,0 +1,199 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '../../styles/themes';
+
+@include nb-install-component() {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
+  }
+
+  nb-action {
+    height: auto;
+    display: flex;
+    align-content: center;
+  }
+
+  nb-user {
+    cursor: pointer;
+  }
+
+  ::ng-deep nb-search button {
+    padding: 0!important;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: auto;
+
+    .sidebar-toggle {
+      @include nb-ltr(padding-right, 1.25rem);
+      @include nb-rtl(padding-left, 1.25rem);
+      text-decoration: none;
+      color: nb-theme(text-hint-color);
+      nb-icon {
+        font-size: 1.75rem;
+      }
+    }
+
+    .logo {
+      padding: 0 1.25rem;
+      font-size: 1.75rem;
+      @include nb-ltr(border-left, 1px solid nb-theme(divider-color));
+      @include nb-rtl(border-right, 1px solid nb-theme(divider-color));
+      white-space: nowrap;
+      text-decoration: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .control-item {
+      display: none;
+    }
+    .user-action {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    nb-select {
+      display: none;
+    }
+  }
+}
+
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+::ng-deep {
+  .nb-theme-dark .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    color: white;
+    background-color: #222b45;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem 0 #1a1f33;
+    max-width: 200px;
+    z-index: 1;
+
+    ul {
+      border: 1px solid #151a30;
+    }
+
+    li {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 400;
+      color: white !important;
+      line-height: 1.25rem;
+      border-bottom: 1px solid #151a30;
+      padding: 15px 20px;
+
+      a {
+        color: #ffffff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+    }
+  }
+  .nb-theme-default .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    color: black;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem 0 #3e3e43;
+    max-width: 200px;
+    z-index: 1;
+
+    ul {
+      border: 1px solid #dee2e6;
+    }
+
+    li {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 400;
+      color: black !important;
+      line-height: 1.25rem;
+      border-bottom: 1px solid #dee2e6;
+      padding: 15px 20px;
+
+      a {
+        color: #ffffff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+    }
+  }
+  .nb-theme-cosmic .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    color: white;
+    background-color: #323259;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem 0 #1a1f33;
+    max-width: 200px;
+    z-index: 1;
+
+    ul {
+      border: 1px solid #151a30;
+    }
+
+    li {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 400;
+      color: white !important;
+      line-height: 1.25rem;
+      border-bottom: 1px solid #151a30;
+      padding: 15px 20px;
+
+      a {
+        color: #ffffff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+    }
+  }
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}

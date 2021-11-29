@@ -1,0 +1,20 @@
+{
+  "login": {
+    "title": "Management System!",
+    "login": "Log in",
+    "changePass": "Change Password",
+    "confirmEmail": "Forget Password",
+    "remember": "Remember password",
+    "pass": "Password",
+    "recaptchaReactive": "Captcha Code",
+    "oldPass": "Old Password",
+    "newPass": "New Password",
+    "comPass": "Re-enter password",
+    "name": "User Name",
+    "email": "Enter email address",
+    "emailC": "Email",
+    "sendEmail": "Send email",
+    "notification": "Notification",
+    "error": "Error"
+  }
+}

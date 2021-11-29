@@ -1,0 +1,74 @@
+{
+  "users": {
+    "title": "Quản lý người dùng",
+    "insert_btn": "Thêm mới người dùng",
+    "title_add": "Thêm mới người dùng",
+    "title_edit": "Sửa thông tin người dùng",
+    "title_delete": "Xác nhận xóa người dùng",
+    "unknown_error": "Lỗi không xác định",
+    "content_add_success": "Thêm người dùng thành công",
+    "content_edit_success": "Sửa thông tin thành công",
+    "delete_success": "Xóa người dùng thành công"
+  },
+  "roles": {
+    "title": "Quản lý nhóm quyền",
+    "title_add": "Thêm mới quyền",
+    "title_edit": "Sửa quyền",
+    "title_delete": "Xác nhận xóa quyền",
+    "content_add_success": "Thêm quyền thành công",
+    "content_edit_success": "Sửa quyền thành công",
+    "message_delete": "Bạn có chắc muốn xóa quyền",
+    "delete_success": "Xóa quyền thành công",
+    "title_map_popup": "Quyền"
+  },
+  "action": {
+    "title": "Quản lý Action",
+    "title_add": "Thêm mới Action",
+    "title_edit": "Sửa Action",
+    "title_delete": "Xác nhận xóa Action",
+    "content_add_success": "Thêm Action thành công",
+    "content_edit_success": "Sửa Action thành công",
+    "message_delete": "Bạn có chắc muốn xóa Action",
+    "delete_success": "Xóa Action thành công",
+    "title_map_popup": "Action"
+  },
+  "size": {
+    "title": "Quản lý Size",
+    "title_add": "Thêm mới Size",
+    "title_edit": "Sửa Size",
+    "title_delete": "Xác nhận xóa Size",
+    "content_add_success": "Thêm Size thành công",
+    "content_edit_success": "Sửa Size thành công",
+    "message_delete": "Bạn có chắc muốn xóa Size",
+    "delete_success": "Xóa Size thành công",
+    "title_map_popup": "Size"
+  },
+  "color": {
+    "title": "Quản lý Màu",
+    "title_add": "Thêm mới Màu",
+    "title_edit": "Sửa Màu",
+    "title_delete": "Xác nhận xóa Màu",
+    "content_add_success": "Thêm Màu thành công",
+    "content_edit_success": "Sửa Màu thành công",
+    "message_delete": "Bạn có chắc muốn xóa Màu",
+    "delete_success": "Xóa Màu thành công",
+    "title_map_popup": "Màu"
+  },
+  "objects": {
+    "title": "Quản lý chức năng",
+    "title_add": "Thêm mới chức năng",
+    "title_edit": "Sửa chức năng",
+    "title_delete": "Xác nhận xóa chức năng",
+    "content_add_success": "Thêm chức năng thành công",
+    "content_edit_success": "Sửa chức năng thành công",
+    "message_delete": "Bạn có chắc muốn xóa chức năng",
+    "delete_success": "Xóa chức năng thành công",
+    "title_map_popup": "chức năng"
+  },
+  "logs": {
+    "title": "Theo dõi lịch sử tác động"
+  },
+  "role_object": {
+    "map_popup_success": "Sửa thành công"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "products": {
+    "title": "Quản lý sản phẩm",
+    "insert_btn": "Thêm mới sản phẩm",
+    "title_add": "Thêm mới sản phẩm",
+    "title_edit": "Sửa thông tin sản phẩm",
+    "title_delete": "Xác nhận xóa sản phẩm",
+    "unknown_error": "Lỗi không xác định",
+    "content_add_success": "Thêm sản phẩm thành công",
+    "content_edit_success": "Sửa thông tin thành công",
+    "delete_success": "Xóa sản phẩm thành công"
+  },
+  "image": {
+    "title": "Quản lý hình ảnh",
+    "title_lock": "Xác nhận khoá hình ảnh",
+    "unknown_error": "Lỗi không xác định",
+    "content_add_success": "Upload hình ảnh thành công",
+    "lock_success": "Khoá sản phẩm thành công",
+    "title_delete": "Xác nhận xóa sản phẩm",
+    "delete_success": "Xóa sản phẩm thành công"
+  }
+}

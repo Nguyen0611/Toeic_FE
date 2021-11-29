@@ -1,0 +1,19 @@
+{
+  "validation": {
+    "required": "{{field}} không được bỏ trống.",
+    "space": "{{field}} không được nhập ký tự khoảng trắng.",
+    "maxLength": "{{field}} chỉ được dài tối đa {{value}} ký tự",
+    "minLength": "{{field}} phải dài tối thiểu {{value}} ký tự",
+    "pattern": "{{field}} sai định dạng",
+    "onlyNaturalNumber": "{{field}} phải là số nguyên dương",
+    "onlyNumber": "{{field}} phải là số",
+    "onlyDoubleNumber": "{{field}} phải là kiểu số",
+    "onlyCharacter": "{{field}} chỉ được nhập ký tự chữ cái, chữ số và dấu _",
+    "mustMatch": "{{field}} không khớp",
+    "passwordMustMatchChange": "Mật khẩu mới và nhập lại mật khẩu mới không khớp",
+    "existCheck": "{{field}} đã tồn tại",
+    "email": "Không đúng định dạng email",
+    "mustSameUnit": "{{field}} phải cùng đơn vị",
+    "date": "{{field}} không đúng định dạng"
+  }
+}

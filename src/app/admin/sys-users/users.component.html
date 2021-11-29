@@ -1,0 +1,116 @@
+<div class="row" [nbSpinner]="isLoad" nbSpinnerSize="giant" nbSpinnerStatus="primary">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header class="d-flex">
+        <label>{{ 'sys-users.title' | translate }}</label>
+        <button nbButton status="primary" size="tiny" class="ml-auto" (click)="viewUsers(null)">
+          <nb-icon icon="plus" pack="eva"></nb-icon>
+          {{ 'sys-users.insert_btn' | translate }}
+        </button>
+      </nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="inputForm">
+          <div class="mb-4">
+            <div class="row">
+<!--              <div class="col-lg-4 form-group">-->
+<!--                <label class="label">-->
+<!--                  {{ 'common.table.item_username' | translate }}-->
+<!--                </label>-->
+<!--                <input (keyup.enter)="search(0)" nbInput fullWidth formControlName="name">-->
+<!--              </div>-->
+              <div class="col-lg-4 form-group">
+                <label class="label">
+                  {{ 'common.table.item_fullName' | translate }}
+                </label>
+                <input (keyup.enter)="search(0)" nbInput fullWidth formControlName="fullName">
+              </div>
+              <div class="col-lg-4 form-group">
+                <label class="label">
+                  {{ 'common.table.item_tel' | translate }}
+                </label>
+                <input (keyup.enter)="search(0)" nbInput fullWidth formControlName="phone">
+              </div>
+              <div class="col-lg-4 form-group">
+                <label class="label">
+                  {{'common.table.item_email' | translate }}
+                </label>
+                <input (keyup.enter)="search(0)" nbInput fullWidth formControlName="mail">
+              </div>
+              <div class="col-lg-4 form-group">
+                <label class="label">
+                  {{ 'common.table.item_status' | translate }}
+                </label>
+                <ng-select fullWidth appendTo="body"
+                           placeholder="{{'common.placeHolder' |translate}}"
+                           notFoundText="{{'common.notFoundText' |translate}}"
+                           clearAllText="{{'common.clearAllText' |translate}}"
+                           formControlName="status">
+                  <ng-option *ngFor="let item of listStatus" [value]="item.code"> {{ item.name | translate }}
+                  </ng-option>
+                </ng-select>
+              </div>
+            </div>
+            <div class="col-12 text-center">
+              <button nbButton status="primary" type="submit" (click)="search(0)">{{ 'common.search' | translate }}
+                <nb-icon icon="search-outline"></nb-icon>
+              </button>
+            </div>
+          </div>
+        </form>
+        <ngx-datatable ngxResizeWatcher class="material"
+                       [columnMode]="'flex'"
+                       [rows]="rows"
+                       [columns]="columns"
+                       rowHeight="auto"
+                       [externalPaging]="true"
+                       [count]="page.count"
+                       [offset]="page.offset"
+                       [limit]="page.limit"
+                       [footerHeight]="50"
+                       [headerHeight]="50"
+                       (page)="pageCallback($event)"
+                       [messages]="{ emptyMessage: 'common.notFoundText' | translate, totalMessage: 'common.totalMessage' | translate }">
+          <ng-container *ngFor="let col of columns">
+            <ngx-datatable-column prop="{{col.prop}}" name="{{col.name}}" [flexGrow]="col.flexGrow">
+              <ng-template let-column="column" ngx-datatable-header-template>
+                {{ column.name | translate }}
+              </ng-template>
+              <ng-template let-value="value" ngx-datatable-cell-template let-row="row" let-rowIndex='rowIndex'>
+                <ng-container *ngIf="col.prop ==='index'" class="index-col">
+                  {{ page.offset * page.limit + rowIndex + 1 }}
+                </ng-container>
+                <ng-container
+                  *ngIf="col.prop ==='mail' || col.prop ==='name'|| col.prop ==='rolesName'|| col.prop ==='fullName' || col.prop ==='phone' "
+                  class="text-right">
+                  <span class="row-data-show"
+                        title="{{value}}">{{value.length > 50 ? value.substring(0, 50).concat('...') : value}}</span>
+                </ng-container>
+                <ng-container *ngIf="col.prop ==='dateOfBirth'">
+                  {{ value | date: 'dd-MM-yyyy'}}
+                </ng-container>
+                <ng-container  *ngIf="col.prop ==='pathUrl'">
+                  <img style="height: 50px;width: 50px;border-radius: 50%; border: 0;" [src]="value ? value : 'https://www.w3schools.com/howto/img_avatar.png'" alt="">
+                </ng-container>
+                <ng-container *ngIf="col.prop ==='status'">
+                  {{  'common.status.' + value | translate }}
+                </ng-container>
+                <ng-container *ngIf="col.prop ==='action_btn'" class="text-right">
+                  <div>
+                    <button class="p-1" nbButton status="info" ghost title="{{ 'common.view' | translate}}"
+                            (click)="viewUsers(row)">
+                      <nb-icon icon="edit-2-outline" pack="eva" size="tiny"></nb-icon>
+                    </button>
+                    <button class="p-1" nbButton status="danger" ghost title="{{ 'common.delete' | translate }}"
+                            (click)="deleteUsers(row)">
+                      <nb-icon icon="trash-2-outline" pack="eva" size="tiny"></nb-icon>
+                    </button>
+                  </div>
+                </ng-container>
+              </ng-template>
+            </ngx-datatable-column>
+          </ng-container>
+        </ngx-datatable>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

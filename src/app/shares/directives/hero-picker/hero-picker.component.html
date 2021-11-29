@@ -1,0 +1,112 @@
+<input nbInput fullWidth
+       [(ngModel)]="value"
+       (keyup)="changeValue()"
+       (keydown.enter)="checkValidTime()"
+       [disabled]="disable"
+       [readOnly]="readonly"
+       (blur)="checkTimeEmpty()"
+       (click)="createOverlay()"
+       #inputElement
+       class="form-control"
+       [clearIfNotMatch]="true"
+       [mask]="mask"
+       [fieldSize]="size"
+/>
+<ng-template #overlay>
+  <nb-card>
+    <nb-card-body [ngSwitch]="activeViewMode">
+      <ng-container *ngIf="timeType==='quarter'">
+        <ng-container *ngSwitchCase="ViewMode.MONTH">
+          <div class="d-flex">
+            <div class="mr-auto">
+              <nb-calendar-pageable-navigation
+                (next)="nextYears()"
+                (prev)="prevYears()">
+              </nb-calendar-pageable-navigation>
+            </div>
+            <div>
+              <nb-calendar-view-mode
+                [viewMode]="ViewMode.MONTH"
+                [date]="visibleDate"
+                (changeMode)="setViewMode(ViewMode.YEAR)">
+              </nb-calendar-view-mode>
+            </div>
+          </div>
+          <div class="mt-3">
+            <ng-container *ngFor="let i of [1,2,3,4]">
+              <button class="btn" (click)="setQuarterDate(i)" [ngClass]="{'btn-primary':isActiveQuarter(i)}">
+                Quý {{i}}</button>
+            </ng-container>
+          </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="ViewMode.YEAR">
+          <div class="d-flex">
+            <div class="mr-auto">
+              <nb-calendar-pageable-navigation
+                (next)="nextPageYears()"
+                (prev)="prevPageYears()">
+              </nb-calendar-pageable-navigation>
+            </div>
+          </div>
+          <nb-calendar-year-picker
+            [date]="date"
+            [year]="visibleDate"
+            (yearChange)="setValueDate($event); setViewMode(ViewMode.MONTH)">
+          </nb-calendar-year-picker>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="timeType==='year'">
+        <div class="d-flex">
+          <div class="mr-auto">
+            <nb-calendar-pageable-navigation
+              (next)="nextPageYears()"
+              (prev)="prevPageYears()">
+            </nb-calendar-pageable-navigation>
+          </div>
+        </div>
+        <nb-calendar-year-picker
+          [date]="date"
+          [year]="visibleDate"
+          (yearChange)="setValueDate($event); dismissOverlay();">
+        </nb-calendar-year-picker>
+      </ng-container>
+      <ng-container *ngIf="timeType==='month'">
+        <ng-container *ngSwitchCase="ViewMode.MONTH">
+          <div class="d-flex">
+            <div class="mr-auto">
+              <nb-calendar-pageable-navigation
+                (next)="nextYears()"
+                (prev)="prevYears()">
+              </nb-calendar-pageable-navigation>
+            </div>
+            <div>
+              <nb-calendar-view-mode
+                (changeMode)="setViewMode(ViewMode.YEAR)"
+                [date]="visibleDate">
+              </nb-calendar-view-mode>
+            </div>
+          </div>
+          <nb-calendar-month-picker
+            [month]="visibleDate"
+            (monthChange)="setValueDate($event); dismissOverlay()">
+          </nb-calendar-month-picker>
+        </ng-container>
+        <ng-container *ngSwitchCase="ViewMode.YEAR">
+          <nb-calendar-pageable-navigation
+            (next)="nextPageYears()"
+            (prev)="prevPageYears()">
+          </nb-calendar-pageable-navigation>
+          <nb-calendar-year-picker
+            [date]="date"
+            [year]="visibleDate"
+            (yearChange)="setVisibleDate($event); setViewMode(ViewMode.MONTH)">
+          </nb-calendar-year-picker>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="timeType==='date'">
+        <nb-calendar [date]="date" (dateChange)="setValueDate($event); dismissOverlay()"></nb-calendar>
+      </ng-container>
+
+    </nb-card-body>
+  </nb-card>
+</ng-template>

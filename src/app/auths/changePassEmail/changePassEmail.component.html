@@ -1,0 +1,50 @@
+<div class="container-login100" [nbSpinner]="isLoad" nbSpinnerSize="giant" nbSpinnerStatus="primary"
+     style="background-image: url('assets/images/bg-01.jpg');">
+  <div class="modal is-open">
+
+    <div class="modal-container">
+      <div class="modal-left" style=" margin-bottom: 5vh;">
+        <h1 class="modal-title"
+            style="color: #292D34; text-align: center; margin-bottom: 5vh;">{{ 'login.title' | translate}}</h1>
+        <form (ngSubmit)="onSubmit()" [formGroup]="inputUser">
+          <div class="form-group">
+            <div class="input-icon -show">
+              <input (keyup)="trimValue($event)" [type]="getInputType(1)" formControlName="newPass" type="password"
+                     class="form-control" placeholder="{{ 'login.newPass' | translate}}"
+                     [ngClass]="{'status-danger': this.inputUser.get('newPass').errors}">
+              <span class="icon"><img src="assets/images/lock.svg"></span>
+              <span class="icon-show fa  fa-eye" (click)="toggleShowPassword(1)" style="margin-right:1em;">
+          								</span>
+            </div>
+          </div>
+          <ngx-inline-message [message]="'login.newPass'|translate"
+                              [formName]="inputUser.get('newPass')"></ngx-inline-message>
+          <div class="form-group">
+            <div class="input-icon -show">
+              <input (keyup)="trimValue($event)" [type]="getInputType(2)" formControlName="comPass" type="password"
+                     class="form-control" placeholder="{{ 'login.comPass' | translate}}"
+                     [ngClass]="{'status-danger': this.inputUser.get('comPass').errors}">
+              <span class="icon"><img src="assets/images/lock.svg"></span>
+              <span class="icon-show fa  fa-eye" (click)="toggleShowPassword(2)" style="margin-right:1em;">
+          								</span>
+            </div>
+          </div>
+          <ngx-inline-message [message]="'login.comPass'|translate"
+                              [formName]="inputUser.get('comPass')"></ngx-inline-message>
+          <div class="modal-buttons" style="margin-top: 2em;">
+            <a routerLink="/auths/login">{{ 'login.login' | translate}}</a>
+            <button class="btn btn-main" [disabled]="inputUser.invalid">{{ 'login.changePass' | translate}}</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-right">
+        <img
+          src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80"
+          alt="">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

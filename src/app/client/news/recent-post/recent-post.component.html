@@ -1,0 +1,12 @@
+<aside class="single_sidebar_widget popular_post_widget">
+  <h3 class="widget_title">Tin mới nhất</h3>
+  <div *ngFor="let key of arr" class="media post_item">
+    <img style="width: 100px;height: 100px;" [src]="key.imageLink" alt="post">
+    <div class="media-body">
+      <a (click)="nextRouter(key)" >
+        <h3 style="cursor: pointer;">{{key.title}}</h3>
+      </a>
+      <p>{{key.updateTime | date:'dd/MM/yyyy HH:mm:ss'}}</p>
+    </div>
+  </div>
+</aside>

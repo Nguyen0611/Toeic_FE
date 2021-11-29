@@ -1,0 +1,123 @@
+
+<nb-card style="position: relative;     margin-top: 70px;" [nbSpinner]="loading" fullWidth>
+  <div class="container" style="    display: grid;
+    border: 1px solid black;">
+
+  <nb-card-header style="    padding: 20px;" class="card-header-title">Account Information
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="inputUser">
+      <div class="mb-4">
+        <div class="row">
+          <div style="padding: 50px;" class="col-lg-4 form-group">
+            <img style=" margin: auto;display: block;  height: 200px; width: 200px;border: 5px solid #000;border-radius: 50%;" [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> <br/>
+            <input *ngIf="!isDis" accept="*"  (change)="selectFile($event)" type='file'>
+          </div>
+          <div class="col-lg-8 form-group">
+            <div class="col-lg-12 form-group" style="display: flex">
+              <div class="col-lg-3">
+                <label class="label">
+                  {{ 'common.table.item_email' | translate }} <span style="color: red">(*)</span>
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <input disabled class="custom-border" formControlName="mail" type="text" nbInput
+                       fullWidth
+                       trim="blur" placeholder="{{'common.table.item_email' |translate}}"
+                       [ngClass]="{'status-danger': this.inputUser.get('mail').touched && this.inputUser.get('mail').errors}">
+                <ngx-inline-message [message]="'common.table.item_email'|translate"
+                                    [formName]="inputUser.get('mail')"></ngx-inline-message>
+              </div>
+            </div>
+            <div class="col-lg-12 form-group" style="display: flex">
+              <div class="col-lg-3">
+                <label class="label">
+                  {{ 'common.table.item_fullName' | translate }} <span style="color: red">(*)</span>
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <input [attr.disabled]="isDis" class="custom-border" formControlName="fullName" type="text" nbInput
+                       fullWidth trim="blur" placeholder="{{'common.table.item_fullName' |translate}}"
+                       [ngClass]="{'status-danger': this.inputUser.get('fullName').touched && this.inputUser.get('fullName').errors}">
+                <ngx-inline-message [message]="'common.table.item_fullName'|translate"
+                                    [formName]="inputUser.get('fullName')"></ngx-inline-message>
+              </div>
+            </div>
+            <div class="col-lg-12 form-group" style="display: flex">
+              <div class="col-lg-3">
+                <label class="label">
+                  {{ 'common.table.item_tel' | translate}}
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <input [attr.disabled]="isDis" class="custom-border" formControlName="phone" type="text" nbInput
+                       fullWidth placeholder="{{'common.table.item_tel' |translate}}"
+                       trim="blur"
+                       [ngClass]="{'status-danger': this.inputUser.get('phone').touched && this.inputUser.get('phone').errors}">
+                <ngx-inline-message [message]="'common.table.item_tel'|translate"
+                                    [formName]="inputUser.get('phone')"></ngx-inline-message>
+              </div>
+            </div>
+            <div class="col-lg-12 form-group" style="display: flex">
+              <div class="col-lg-3">
+                <label class="label">
+                  {{ 'common.table.item_dateOfBirth' | translate }} <span style="color: red">(*)</span>
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <input  class="custom-border" nbInput fullWidth
+                       formControlName="dateOfBirth" placeholder="{{'common.table.item_dateOfBirth' |translate}}"
+                       [nbDatepicker]="fromDate"
+                       [ngClass]="{'status-danger': this.inputUser.get('dateOfBirth').touched && this.inputUser.get('dateOfBirth').errors}"
+                >
+                <nb-datepicker #fromDate format="{{'common.format_date' |translate}}">
+                </nb-datepicker>
+                <ngx-inline-message [message]="'common.table.item_dateOfBirth'|translate"
+                                    [formName]="inputUser.get('dateOfBirth')"></ngx-inline-message>
+              </div>
+            </div>
+              <div class="col-lg-12 form-group" style="display: flex">
+                <div class="col-lg-3">
+                  <label class="label">
+                    {{ 'common.table.status' | translate }}
+                  </label>
+                </div>
+                <div class="col-lg-6">
+                  <input disabled class="custom-border" type="text" nbInput
+                         fullWidth placeholder="{{'common.table.placeHolder' |translate}}"
+                         trim="blur" value="{{  'common.status.' + valueStatus | translate }}"
+                         [ngClass]="{'status-danger': this.inputUser.get('status').touched && this.inputUser.get('status').errors}">
+                  <ngx-inline-message [message]="'common.table.item_status'|translate"
+                                      [formName]="inputUser.get('status')"></ngx-inline-message>
+                </div>
+
+
+            </div>
+            <div class="col-lg-12 form-group" style="display: flex">
+              <div class="col-lg-3">
+                <label class="label">
+                  {{ 'common.table.address' | translate}}
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <input [attr.disabled]="isDis" class="custom-border" formControlName="address" type="text" nbInput
+                       fullWidth placeholder="{{'common.table.address' |translate}}"
+                       trim="blur"
+                       [ngClass]="{'status-danger': this.inputUser.get('address').touched && this.inputUser.get('address').errors}">
+                <ngx-inline-message [message]="'common.table.address'|translate"
+                                    [formName]="inputUser.get('address')"></ngx-inline-message>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer class="text-right">
+    <button nbButton [disabled]="inputUser.invalid" type="button" status="primary" (click)="submit()"
+            id="dialogCancelBtn">{{ 'common.save' | translate }}</button>
+  </nb-card-footer>
+  </div>
+
+</nb-card>

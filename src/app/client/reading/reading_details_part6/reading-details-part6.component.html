@@ -1,0 +1,128 @@
+<!-- Title page -->
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="margin-top: 70px;background-image: url('/toeic-web/assets/images/img_study/about.jpeg');">
+  <h2 class="ltext-105 cl0 txt-center">
+    Part VI : Single Passages
+  </h2>
+</section>
+<nb-card style="position: relative;margin-top: 70px;" fullWidth style="min-height: 500px;" [nbSpinner]="loading">
+  <div *ngIf="!historyShowCheck; else elseBlock" class="container" style="display: grid; border: 1px solid black;">
+    <nb-card-header style="padding: 20px; font-size: 16px; color: black; padding-left: 4% !important;"
+                    class="card-header-title">Exam {{countExamIndex}}/{{countExamDefault}}</nb-card-header>
+    <nb-card-body style="overflow: hidden !important;">
+      <div class="row container" style="font-size: medium; font-family: bold; margin: 0px">
+
+        <div class="col-lg-5">
+          <div style="margin: auto;">
+            <img style="width: 100%" [src]="pathImg">
+<!--            Hiển thị ảnh-->
+          </div>
+        </div>
+<!--For theo 4 câu hỏi-->
+        <div class="col-lg-5">
+          <nb-card *ngFor="let test of lisTopic | keyvalue; index as index">
+<!--             For cho list các câu hỏi - tức là các label-->
+            <nb-card-header style="color: black">{{index + 1}}. {{test.value[0].name}}</nb-card-header>
+            <nb-card-body>
+              <form ngDefaultControl >
+<!--                Mảng lưu lại tất cả các câu hỏi đã chọn-->
+                <nb-radio-group [(ngModel)]="result[index]" [ngModelOptions]="{standalone: true}"  (ngModelChange)="radioChange()" [disabled]="submitCheck">
+                  <nb-radio [(value)] = "test.value[0].id">
+                    A. {{test.value[0].answerToChoose}}
+                  </nb-radio>
+                  <nb-radio [(value)] = "test.value[1].id">
+                    B. {{test.value[1].answerToChoose}}
+                  </nb-radio>
+                  <nb-radio [(value)] = "test.value[2].id">
+                    C. {{test.value[2].answerToChoose}}
+                  </nb-radio>
+                  <nb-radio [(value)] = "test.value[3].id">
+<!--                    Value chính là kết quả được chọn-->
+                    D. {{test.value[3].answerToChoose}}
+                  </nb-radio>
+                </nb-radio-group>
+              </form>
+            </nb-card-body>
+            <nb-card-footer style="font-weight: bold"
+              [ngStyle]="{'color': listColorResult[index] ? 'green' : 'red'}">{{answerCheck[index]}}
+            </nb-card-footer>
+          </nb-card>
+
+          <div class="col-lg-12">
+            <label *ngIf="!countAnswerCheck" style="color: red; margin-top: 2%; font-weight: bold; font-style: italic">
+              Please choose enough answers!
+            </label>
+            <button nbButton status="primary" style="margin: 5%; margin-top: 2% !important;" type="submit"
+                    [hidden]="submitCheck"
+                    (click)="submitComplete()">
+              Submit
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-2" [hidden]="!submitCheck" >
+          <button style="width: 100%; height: 100%; background: white; border: 0;" nbButton status="basic"
+                  type="submit"
+                  (click)="nextQuestion()">
+            <nb-icon style="width: 40%; height: 40%;" icon="arrowhead-right-outline"></nb-icon>
+          </button>
+        </div>
+
+        <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px; margin-top: 2%">
+          <div class="col-lg-12" [hidden]="!submitCheck">
+            <div class="col-lg-12" style="margin-bottom: 2%; padding-left: 0px">
+              <!--              <p1 style="font-size: 16px">Description</p1>-->
+              <nb-card-header
+                style="padding: 20px; font-size: 16px; border-bottom: none !important; color: black;  padding-left: 0px !important;"
+                              class="card-header-title">Description
+              </nb-card-header>
+            </div>
+            <div style="margin: auto; border-style: solid; border-width: 1px; padding: 1%; display: grid;" class="col-lg-12">
+              <nb-card-header *ngFor="let test of lisTopic | keyvalue; index as i" style="padding: 20px; color: black"
+                              class="card-header-title">Question{{i + 1}} {{test.value[0].name}}: {{test.value[0].transscript}}<br>
+              </nb-card-header>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </nb-card-body>
+  </div>
+  <ng-template #elseBlock>
+    <div class="container" style="display: grid; border: 1px solid black;">
+      <nb-card-header style="padding: 20px; font-size: 16px; padding-left: 2.8%;" class="card-header-title">Result</nb-card-header>
+      <nb-card-body>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div>
+                <table class="table table-bordered">
+                  <thead class="thead-light">
+                  <tr>
+                    <th style="text-align: center" scope="col">No</th>
+                    <th style="text-align: center" scope="col">Topic Name</th>
+                    <th style="text-align: center" scope="col">Result</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let item of resultTotal; index as i">
+                    <th style="text-align: center" scope="row">{{i + 1}}</th>
+                    <th style="text-align: center">{{item.topicName}}</th>
+                    <td style="color: #1a34b8; text-align: center">{{item.correct}}/{{item.total}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div style="text-align: center;">
+                <button status="primary" style=" margin: 15px; width: 155px"
+                        type="button" nbButton type="button" (click)="similarExercise()">Similar exercise
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nb-card-body>
+    </div>
+  </ng-template>
+</nb-card>

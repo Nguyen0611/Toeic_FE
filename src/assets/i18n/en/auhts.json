@@ -1,0 +1,22 @@
+{
+  "login": {
+    "title": "Toeic online learning!",
+    "login": "Login",
+    "register": "Register",
+    "registration": "Registration",
+    "changePass": "Change Password",
+    "confirmEmail": "Forgot Password",
+    "remember": "Remember password",
+    "pass": "Password",
+    "recaptchaReactive": "Mã Captcha",
+    "oldPass": "Old Password",
+    "newPass": "New Password",
+    "comPass": "Confirm password",
+    "name": "Username",
+    "email": "Enter your email",
+    "emailC": "Email",
+    "sendEmail": "Send email",
+    "notification": "Notification",
+    "error": "Error"
+  }
+}

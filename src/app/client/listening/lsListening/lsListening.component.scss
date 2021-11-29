@@ -1,0 +1,15 @@
+@import '../../../@theme/styles/main.css';
+@import '../../../@theme/styles/util.css';
+
+nb-layout-header nav {
+  padding: 0 !important;
+  align-items: normal !important;
+}
+nav.limiter-menu-desktop.container {
+  box-shadow: 0 0 black;
+
+}
+
+p {
+  color: black !important;
+}

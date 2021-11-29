@@ -1,0 +1,145 @@
+
+@import '../../styles/main.css';
+@import '../../styles/util.css';
+@import '../../styles/client.css';
+
+.content nb-layout-footer nav {
+  padding: 0 !important;
+}
+ngx-footer-client {
+  width: 100%;
+}
+
+.footer {
+  position: relative;
+}
+
+.footer-top {
+  padding: 25px 0;
+  background-color: #353535;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.footer-top .list-link-footer a {
+  color: #fff;
+}
+
+.footer-top .footer-count {
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+.footer-top .footer-count .counter-item {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.footer-top .footer-count .counter-item .count-number {
+  color: #ffff00;
+}
+
+.footer-top .link-footer .footer-title {
+  font-family: 'Oswald', sans-serif;
+  padding-bottom: 10px;
+  letter-spacing: 1.3px;
+  font-size: 27px;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+
+.footer-top .link-footer a {
+  font-family: 'Arimo', sans-serif;
+  font-weight: 700;
+  color: #b9d4c6;
+  font-size: 18px;
+  display: block;
+}
+
+.footer-top .footer-contact {
+  text-align: left;
+}
+
+.footer-top .footer-contact img {
+  margin-right: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+}
+
+.footer-top .footer-contact a {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.footer-top .footer-contact p {
+  font-family: 'Arimo', sans-serif;
+  font-weight: 700;
+  color: #b9d4c6;
+  font-size: 18px;
+  display: block;
+}
+
+.footer-top .footer-contact p.pl-20 {
+  padding-left: 50px;
+}
+
+.footer-social .icon-social {
+  width: 40px;
+  height: 37px;
+  text-align: center;
+  line-height: 32px;
+  display: inline-block;
+  background-color: #fff;
+  font-size: 24px;
+  border-radius: 5px;
+  -webkit-box-shadow: -2px 6px 0 #315d48;
+  box-shadow: -2px 6px 0 #315d48;
+  margin: 5px;
+  vertical-align: middle;
+  padding-top: 7px;
+}
+
+.footer-social .icon-social .fa-facebook {
+  color: #496aae;
+}
+
+.footer-social .icon-social .fa-google-plus-official {
+  color: #db4639;
+}
+
+.footer-social .icon-social .fa-youtube-play {
+  color: #db2724;
+}
+
+.footer-social.d-block {
+  width: 100%;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.footer-bottom {
+  background-color: #015935;
+  border-top: 1px solid #fff;
+  padding: 22px 0 5px;
+  border-bottom: 3px solid #106938;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Arimo', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+p.pl-20 {
+  padding: 10px 0;
+  color: white;
+}

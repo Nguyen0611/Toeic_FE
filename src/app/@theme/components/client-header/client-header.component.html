@@ -1,0 +1,55 @@
+<header>
+  <div class="container-menu-desktop">
+
+    <div class="top-bar">
+      <div class="content-topbar flex-sb-m h-full container">
+        <div class="left-top-bar">
+          TOEIC ONLINE LEARNING SYSTEM
+        </div>
+      </div>
+    </div>
+
+    <div style="z-index: 11; background: white; height: 70px" class="wrap-menu-desktop">
+      <nav class="limiter-menu-desktop container">
+        <a href="#" class="logo" style="height: 100%;">
+          <img src="assets/images/logo.svg" alt="IMG-LOGO">
+        </a>
+        <div class="menu-desktop">
+          <div [innerHTML]="menudacap" (mouseover)="over()" (mouseout)="out()" class="col-sm-12 ndmenu" id="menu">
+          </div>
+        </div>
+        <div  *ngIf="!isCheck" style="margin-inline-start: auto;"  class="dropdown1">
+          <nb-user style="  height: 100%;"
+            data-toggle="dropdown1" aria-haspopup="true" aria-expanded="false"
+            [onlyPicture]="false"
+            [name]="users.fullName ? users.fullName : users.mail?.toLowerCase()"
+            (click)="false"
+            [picture]="users?.pathUrl ? users?.pathUrl : 'https://www.w3schools.com/howto/img_avatar.png'">
+          </nb-user>
+          <div class="dropdown1-content" style="min-width: 180px !important;">
+            <li class="menu" (click)="viewUsers(null)">{{ 'common.header.menu.profile' | translate}}</li>
+            <li class="menu" (click)="router.navigate(['auths/changePass'])">{{ 'common.header.menu.changePass' | translate}}</li>
+            <li class="menu" (click)="logout()">{{ 'common.header.menu.logout' | translate}}</li>
+          </div>
+        </div>
+        <div *ngIf="isCheck" style="margin-inline-start: auto; display: flex; align-items: center" class="right-top-bar">
+          <p style="border: 0; font-weight: 700; font-size: 16px; cursor: pointer;" (click)="login()" >
+            Login
+          </p>
+            /
+          <p style="border: 0; font-weight: 700; font-size: 16px; cursor: pointer" (click)="dk()">
+             Register
+          </p>
+        </div>
+      </nav>
+
+    </div>
+
+  </div>
+
+
+
+</header>
+
+
+

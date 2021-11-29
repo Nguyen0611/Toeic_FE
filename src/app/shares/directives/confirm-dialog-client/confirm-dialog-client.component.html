@@ -1,0 +1,21 @@
+<nb-card>
+  <nb-card-header style="background: #fffffff2;"><h5>{{ title }}</h5></nb-card-header>
+  <nb-card-body style=" background: #fffffff2;">
+    <div>
+      <img style="height: 100px;display: block;margin: auto;" src="./assets/images/xx-bi-quyet-lam-sach-phoi-mot-cach-tu-nhien-truoc-11.jpeg"/>
+      <div style="display: block; background: beige;margin: 20px 0;">
+        <h6 style="text-align: center;color: #eb0000;padding: 20px 0;font-size: 24px;font-weight: 500;">{{message}}</h6>
+        <span style="font-size: 16px; text-align: center; color: black;padding: 0 20px 20px 19px;display: block;">Hãy đến bác sĩ để nhận tư vấn và chẩn đoán chính xác hơn</span>
+      </div>
+
+    </div>
+  </nb-card-body>
+  <nb-card-footer  style="background: #fffffff2;">
+    <div class="text-right">
+      <button *ngIf="!hideCancel" nbButton type="button" status="warning" (click)="close()"
+              id="dialogCancelBtn">{{ cancelTitle }}</button>
+      <button *ngIf="!hideCancel1" type="button" status="info"  nbButton (click)="save1()" class="ml-2">Điều trị</button>
+      <button  type="button" status="success" nbButton (click)="save()" class="ml-2">{{ okTitle }}</button>
+    </div>
+  </nb-card-footer>
+</nb-card>

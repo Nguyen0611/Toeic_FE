@@ -1,0 +1,58 @@
+<div class="container-login100" [nbSpinner]="isLoad" nbSpinnerSize="giant" nbSpinnerStatus="primary"
+     style="background-image: url('assets/images/bg-01.jpg');">
+  <div class="modal is-open">
+    <div class="modal-container">
+      <div class="modal-left" style=" margin-bottom: 5vh;">
+        <h1 class="modal-title" style="color: #292D34; text-align: center; margin-bottom: 5vh;">{{ 'login.title' | translate}}</h1>
+        <form (ngSubmit)="onSubmit()" [formGroup]="inputUser">
+          <div class="form-group">
+            <div class="input-icon">
+              <input class="form-control" name="name" formControlName="name" (keyup)="trimValue($event)"
+                     [ngClass]="{'status-danger': this.inputUser.get('name').errors}" type="text"
+                     placeholder="{{ 'login.name' | translate}}">
+              <span class="icon"><img src="assets/images/business-contact-86.svg"></span>
+            </div>
+
+          </div>
+          <ngx-inline-message [message]="'login.name'|translate"
+                              [formName]="inputUser.get('name')"></ngx-inline-message>
+          <div class="form-group">
+            <div class="input-icon -show">
+              <input [type]="getInputType()" name="pass" (keyup)="trimValue($event)" fullWidth
+                     formControlName="pass" type="password" class="form-control"
+                     placeholder="{{ 'login.pass' | translate}}"
+                     [ngClass]="{'status-danger': this.inputUser.get('pass').errors}">
+              <span class="icon"><img src="assets/images/lock.svg"></span>
+              <span id="passwordShow" (click)="toggleShowPassword()" class="icon-show fa  fa-eye"
+                    style="margin-right:1em;">
+              								</span>
+            </div>
+            <ngx-inline-message [message]="'login.pass'|translate"
+                                [formName]="inputUser.get('pass')"></ngx-inline-message>
+          </div>
+
+          <div class="form-group form-check" style="margin-top: 0.5rem;">
+            <input type="checkbox" name="remember" id="remember" formControlName="remember"
+                   class="form-check-input"/>
+            <label for="remember" class="form-check-label"
+                   style="color: #292D34 !important;justify-content: center;">{{ 'login.remember' | translate}}</label>
+          </div>
+          <div class="modal-buttons">
+            <a routerLink="/auths/confirmEmail">{{ 'login.confirmEmail' | translate}}</a>
+            <a routerLink="/auths/registration">{{'login.register'| translate}}</a>
+            <button class="btn btn-main" [disabled]="inputUser.invalid">{{ 'login.login' | translate}}</button>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-right" style="position: relative">
+        <img
+          src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80"
+          alt="">
+        <h5 class="modal-title" style="color: #292D34; text-align: center; margin-bottom: 5vh; position: absolute; top: 45%; left: 35%; padding: 15px; background: white">{{ 'login.login' | translate}}</h5>
+      </div>
+    </div>
+
+  </div>
+</div>
+

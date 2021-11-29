@@ -1,0 +1,37 @@
+{
+  "sys-users": {
+    "title": "User Managements",
+    "insert_btn": "Add new user",
+    "title_add": "Add new user",
+    "title_edit": "User information",
+    "title_view": "User details",
+    "title_delete": "Confirm deletion",
+    "unknown_error": "Unknown error",
+    "content_add_success": "User has added sucessful !",
+    "content_edit_success": "User has edited sucessful !",
+    "delete_success": "User has deteted sucessful !"
+  },
+  "sys-topic": {
+    "title": "Topic Managements",
+    "insert_btn": "Add new topic",
+    "title_add": "Add new topic",
+    "title_edit": "Topic information",
+    "title_view": "Topic details",
+    "title_delete": "Confirm deletion",
+    "unknown_error": "Unknown error",
+    "content_add_success": "Topic has added sucessful !",
+    "content_edit_success": "Topic has updated sucessful !",
+    "delete_success": "Topic has deleted sucessful !"
+  }, "sys-category": {
+    "title": "Category Managements",
+    "insert_btn": "Add new category",
+    "title_add": "Add new category",
+    "title_edit": "Category information",
+    "title_view": "Category details",
+    "title_delete": "Are you sure you want to delete",
+    "unknown_error": "Unknown error",
+    "content_add_success": "Category has added sucessful !",
+    "content_edit_success": "Category has updated sucessful !",
+    "delete_success": "Category has deleted sucessful !"
+  }
+}

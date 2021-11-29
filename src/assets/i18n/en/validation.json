@@ -1,0 +1,19 @@
+{
+  "validation": {
+    "required": "{{field}} can not be blank.",
+    "space": "{{field}} can not space",
+    "maxLength": "{{field}} can only be maximum length {{value}} characters",
+    "minLength": "{{field}} at least {{value}} characters",
+    "pattern": "{{field}} incorrect ",
+    "onlyNaturalNumber": "{{field}} must be a positive integer",
+    "onlyNumber": "{{field}} must be number",
+    "onlyDoubleNumber": "{{field}} must be number type",
+    "onlyCharacter": "{{field}} Only letters, numbers, and _ are allowed",
+    "mustMatch": "{{field}} not ma",
+    "passwordMustMatchChange": "New password and re-enter new password do not match",
+    "existCheck": "{{field}} already ",
+    "email": "Incorrect email format",
+    "mustSameUnit": "{{field}} must be same unit",
+    "date": "{{field}} not correct format"
+  }
+}

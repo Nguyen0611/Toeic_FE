@@ -1,0 +1,74 @@
+{
+  "users": {
+    "title": "User Management",
+    "insert_btn": "Add new user",
+    "title_add": "Add new user",
+    "title_edit": "Edit user information",
+    "title_delete": "Confirm user deletion",
+    "unknown_error": "Unknown Error",
+    "content_add_success": "User added successfully",
+    "content_edit_success": "Information edit successfully",
+    "delete_success": "User deleted successfully"
+  },
+  "roles": {
+    "title": "Roles Management",
+    "title_add": "Add new role",
+    "title_edit": "Edit role",
+    "title_delete": "Confirm role deletion",
+    "content_add_success": "Role added successfully",
+    "content_edit_success": "Role edited successfully",
+    "message_delete": "Are you sure delete role ?",
+    "delete_success": "Role deleted successful",
+    "title_map_popup": "Role"
+  },
+  "action": {
+    "title": "Action Management",
+    "title_add": "Add Action",
+    "title_edit": "Edit Action",
+    "title_delete": "Confirm delete Action",
+    "content_add_success": "Action added successfully",
+    "content_edit_success": "Action edited successfully",
+    "message_delete": "Are you sure delete action ?",
+    "delete_success": "Action deleted successfully",
+    "title_map_popup": "Action"
+  },
+  "size": {
+    "title": "Size Management",
+    "title_add": "Add new size",
+    "title_edit": "Edit Size",
+    "title_delete": "Confirm size deletion",
+    "content_add_success": "Size added successfully",
+    "content_edit_success": "Size edited successfully",
+    "message_delete": "Are you sure delete size ?",
+    "delete_success": "Size deleted successfully",
+    "title_map_popup": "Size"
+  },
+  "color": {
+    "title": "Color Management",
+    "title_add": "Add new color",
+    "title_edit": "Edit color",
+    "title_delete": "Confirm color deletion",
+    "content_add_success": "Color added successfully",
+    "content_edit_success": "Color edited successfully",
+    "message_delete": "Are you sure delete color ? ",
+    "delete_success": "Color deleted successfully",
+    "title_map_popup": "Color"
+  },
+  "objects": {
+    "title": "Object Management",
+    "title_add": "Add new object",
+    "title_edit": "Edit object",
+    "title_delete": "Confirm Object deletion",
+    "content_add_success": "Object added successfully",
+    "content_edit_success": "Object edited successfully",
+    "message_delete": "Are you sure delete object ? ",
+    "delete_success": "Object deleted successfully ",
+    "title_map_popup": "Object"
+  },
+  "logs": {
+    "title": "Follow impact history "
+  },
+  "role_object": {
+    "map_popup_success": "Edit successfully"
+  }
+}

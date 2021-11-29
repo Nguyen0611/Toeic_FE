@@ -1,0 +1,123 @@
+<!-- Title page -->
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="margin-top: 70px;background-image: url('/toeic-web/assets/images/img_study/about.jpeg');">
+  <h2 class="ltext-105 cl0 txt-center">
+    Part I: Photographs
+  </h2>
+</section>
+<nb-card style="position: relative;     margin-top: 70px;" [nbSpinner]="loading" fullWidth style="min-height: 500px;">
+  <div class="container" style="display: grid; border: 1px solid black;">
+
+    <nb-card-header [hidden]="isContainer" style="    padding: 20px;" class="card-header-title">Question {{isSelect}}
+      /{{isSize}}
+    </nb-card-header>
+    <nb-card-body>
+      <div [hidden]="isContainer" class="container">
+        <div class="row">
+          <div style="margin: auto;" class="col-sm-6">
+            <ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false"
+                              muted="muted" [displayPlaylist]="msaapDisplayPlayList"
+                              [displayVolumeControls]="msaapDisplayVolumeControls"
+                              [displayRepeatControls]="msaapDisplayRepeatControls"
+                              [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist"
+                              [expanded]="true"></ngx-audio-player>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" style="display: flex" [hidden]="isShowImg">
+            <div class="col-sm-5">
+              <div style="padding: 50px;">
+                <img
+                  style=" margin: auto;display: block;  height: 200px; width: 400px;border: 2px solid #000;"
+                  [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" > <br/>
+              </div>
+            </div>
+            <div class="col-sm-5">
+              <div style="padding: 50px; margin: auto; display: table">
+                <button disabled="{{isDisabled}}" style="margin: 15px;display: block;min-width: 200px;"
+                        *ngFor="let x of lsView"
+                        (click)="isCheck(x)" nbButton type="button" [ngClass]="x.color"
+                        status="{{x.color}}">{{x.value}}</button>
+              </div>
+            </div>
+            <div class="col-sm-2" [hidden]="isHide">
+              <button style="width: 100%; height: 100%;background: white;border: 0;" nbButton status="basic"
+                      type="submit" (click)="isNext()">
+                <nb-icon style="    width: 40%; height: 40%;" icon="arrowhead-right-outline"></nb-icon>
+              </button>
+            </div>
+          </div>
+          <div class="col-sm-12" style="display: flex" [hidden]="!isShowImg">
+            <div class="col-sm-10" style="display: -webkit-box;">
+              <div style="padding: 50px; margin: auto">
+                <button disabled="{{isDisabled}}" style="margin: 15px;display: block;min-width: 200px;"
+                        *ngFor="let x of lsView"
+                        (click)="isCheck(x)" nbButton type="button" [ngClass]="x.color"
+                        status="{{x.color}}">{{x.value}}</button>
+              </div>
+            </div>
+            <div class="col-sm-2" [hidden]="isHide">
+              <button style="width: 100%; height: 100%;background: white;border: 0;" nbButton status="basic"
+                      type="submit" (click)="isNext()">
+                <nb-icon style="    width: 40%; height: 40%;" icon="arrowhead-right-outline"></nb-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row" [hidden]="isHide">
+          <div class="col-lg-12">
+            <div class="symple-box yellow center "
+                 style="background: #fffdf3; border-radius: 2px; border: 1px solid #f2dfa4; box-sizing: border-box; color: #c4690e; float: none; font-family: Arial, sans-serif; font-size: 15px; margin: 0px auto; outline: 0px; padding: 15px 20px; vertical-align: baseline;">
+              <strong
+                style="background: transparent; border: 0px; box-sizing: initial; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">Transcript</strong>:
+              <ul
+                style="background: transparent; border: 0px; box-sizing: initial; margin: 0px 0px 20px 20px; outline: 0px; padding: 0px; vertical-align: baseline;">
+                <li *ngFor="let x of transscript"
+                    style="background: transparent; border: 0px; box-sizing: initial; list-style: disc; margin: 5px 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+                  {{x}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div [hidden]="!isContainer" class="container" style="display: grid;">
+        <nb-card-header style="padding: 20px; font-size: 16px" class="card-header-title"> Result
+        </nb-card-header>
+        <nb-card-body>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div>
+                  <table class="table table-bordered">
+                    <thead class="thead-light">
+                    <tr>
+                      <th scope="col">No</th>
+                      <th scope="col">Categories name</th>
+                      <th scope="col">Result</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of rs; let i = index">
+                      <th scope="row">{{i + 1}}</th>
+                      <th>{{item?.categoryName}}</th>
+                      <td style="color: #1a34b8">{{item?.kq}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div style="text-align: center;">
+                  <button status="primary" style=" margin: 15px; width: 155px" (click)="reload()"
+                          type="button" nbButton type="button">Similar exercise
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nb-card-body>
+      </div>
+    </nb-card-body>
+  </div>
+
+</nb-card>

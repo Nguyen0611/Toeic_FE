@@ -1,0 +1,13 @@
+{
+  "products": {
+    "title": "Product Management",
+    "insert_btn": "Add new product",
+    "title_add": "Add new product",
+    "title_edit": "Edit infor product",
+    "title_delete": "Confirm product deletion",
+    "unknown_error": "Unknown error",
+    "content_add_success": "Product added successfully",
+    "content_edit_success": "Edit information success",
+    "delete_success": "Product deleted successfully"
+  }
+}
